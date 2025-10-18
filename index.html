@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<!-- <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -10,4 +10,65 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Delegate Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="src/styles.css"/>
+<body>
+    <div class="card" role="form" aria-labelledby="form-title">
+        <div>
+            <h1 id="form-title">Add Delegate</h1>
+            <span id="status" aria-live="polite"></span>
+        </div>
+
+        <form id="grantor-form">
+            <legend>Grantor</legend>
+            <div class="row">
+                <div class="field">
+                <label for="grantorFirst">First Name</label>
+                <input id="grantorFirst" name="grantorFirst" type="text" readonly />
+                </div>
+                <div class="field">
+                <label for="grantorLast">Last Name</label>
+                <input id="grantorLast" name="grantorLast" type="text" readonly />
+                </div>
+            </div>
+            <div class="field">
+                <label for="grantorEmail">Email</label>
+                <input id="grantorEmail" name="grantorEmail" type="email" readonly />
+            </div>
+        </form>
+
+        <form id="delegate-form">
+        <legend>Delegate</legend>
+        <div class="row">
+            <div class="field">
+            <label for="delegateFirst">First Name <span aria-hidden="true" title="required">*</span></label>
+            <input id="delegateFirst" name="delegateFirst" type="text" required />
+            </div>
+            <div class="field">
+            <label for="delegateLast">Last Name <span aria-hidden="true" title="required">*</span></label>
+            <input id="delegateLast" name="delegateLast" type="text" required />
+            </div>
+        </div>
+        <div class="field">
+            <label for="delegateEmail">Email <span aria-hidden="true" title="required">*</span></label>
+            <input id="delegateEmail" name="delegateEmail" type="email" required />
+            <div id="emailError" class="error" role="alert" style="display:none;"></div>
+        </div>
+        </form>
+
+        <div class="actions">
+            <button id="submitBtn" type="button" disabled>Submit</button>
+        </div>
+    </div>
+
+    <script src="/src/app.js"></script>
+</body>
 </html>
