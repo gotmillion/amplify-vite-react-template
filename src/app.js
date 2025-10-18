@@ -1,6 +1,11 @@
 'use strict'; 
-// import { DynamoDBClient,DynamoDB } from "@aws-sdk/client-dynamodb";
 // import { DynamoDBDocumentClient,PutCommand } from "@aws-sdk/lib-dynamodb";
+// import { DynamoDBClient,DynamoDB } from "@aws-sdk/client-dynamodb";
+
+// // import type { Schema } from "../amplify/data/resource";
+// import { generateClient } from "aws-amplify/data";
+// import { defineBackend } from '@aws-amplify/backend';
+// // import { DynamoDB} from "@aws-am`"
 
 /**
  * Minimal API adapter. Swap out STUBS for real `fetch` calls later.
@@ -240,6 +245,7 @@ async function onSubmit() {
     console.log('Sending request to function....');
     
     const res = await putItemIntoDynamoDB(payload);
+    
     console.log('Finished putting item into DynamoDB', res);
 
     setSuccess(`Delegate ${df} ${dl} (${de}) added successfully.`);
